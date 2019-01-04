@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/bousui/WebPackGuide/issues"
   },
-  "homepage": "https://github.com/bousui/WebPackGuide#readme"
+  "homepage": "https://github.com/bousui/WebPackGuide#readme",
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  }
 }
