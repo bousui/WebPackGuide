@@ -12,6 +12,9 @@ module.exports = {
 
     // デバッグ・リリースモード設定(development/production)
     mode: 'development',
+
+    // ソースマップ設定
+    devtool: 'source-map',
 };
 
 // htmlファイルのパスを取得
