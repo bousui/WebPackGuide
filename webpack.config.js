@@ -15,6 +15,9 @@ module.exports = {
 
     // ソースマップ設定
     devtool: 'source-map',
+
+    // ファイル変更の監視モード設定
+    watch: true,
 };
 
 // htmlファイルのパスを取得
