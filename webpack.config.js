@@ -28,4 +28,7 @@ const distpath = module.exports.output.path + filename;
 
 // ファイルを出力先にコピー
 const fs = require('fs');
+if (!fs.existsSync(module.exports.output.path)) {
+    fs.mkdirSync(module.exports.output.path);
+}
 fs.copyFileSync(srcpath, distpath);
