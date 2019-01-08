@@ -17,7 +17,7 @@ module.exports = {
     devtool: 'source-map',
 
     // ファイル変更の監視モード設定
-    watch: true,
+    watch: false,
 
     // webpack-dev-server設定
     devServer: {
