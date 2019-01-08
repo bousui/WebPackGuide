@@ -18,6 +18,16 @@ module.exports = {
 
     // ファイル変更の監視モード設定
     watch: true,
+
+    // webpack-dev-server設定
+    devServer: {
+        // ローカルWebサーバーのルートディレクトリ
+        contentBase: 'dist',
+        // ページ自動オープン
+        open: true,
+        // 変更したモジュールだけのリロード
+        hot: true,
+    }
 };
 
 // htmlファイルのパスを取得
