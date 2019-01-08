@@ -27,7 +27,25 @@ module.exports = {
         open: true,
         // 変更したモジュールだけのリロード
         hot: true,
-    }
+    },
+  
+    // モジュール別設定
+    module: {
+        rules: [{
+            // 拡張子が.jsの場合
+            test: /\.js$/,
+            use: [{
+                // Babel設定
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        // ES2018をES5に変換
+                        '@babel/preset-env',
+                    ]
+                }
+            }],
+        }]
+    },
 };
 
 // htmlファイルのパスを取得

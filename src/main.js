@@ -8,3 +8,7 @@ subMethod();
 // jQueryモジュールのテスト
 import {jQueryMethod} from './jquery-module'
 jQueryMethod('htmlSample');
+
+// Babelモジュールのテスト
+import {babelMethod} from './babel-module'
+babelMethod();
