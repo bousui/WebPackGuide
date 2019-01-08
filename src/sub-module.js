@@ -1,3 +1,3 @@
-export function sub_method() {
-    document.write('<br/>Sub module sample.')
+export function subMethod() {
+    document.write('<br/>Sub module sample.');
 }
