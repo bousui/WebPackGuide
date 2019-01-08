@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    // ECMAScriptターゲットバージョン
+    "target": "es5",
+    // モジュールコード生成方法
+    "module": "commonjs",
+    // ソースマップ設定
+    "sourceMap": true,
+  }
+}

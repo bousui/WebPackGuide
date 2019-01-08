@@ -44,8 +44,20 @@ module.exports = {
                     ]
                 }
             }],
+
+            // 拡張子が.tsの場合
+            test: /\.ts$/,
+            // TypeScript設定
+            use: 'ts-loader',
         }]
     },
+
+    // インポート対象の拡張子設定
+    resolve: {
+        extensions: [
+            '.js', '.ts'
+        ]
+    }
 };
 
 // htmlファイルのパスを取得
