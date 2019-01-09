@@ -1,13 +1,13 @@
 module.exports = {
     // エントリーポイント設定
-    entry: './src/main.js',
+    entry: './src/assets/js/main.js',
 
     // ファイルの出力設定
     output: {
         // 出力ディレクトリ名
-        path: `${__dirname}/dist`,
+        path: `${__dirname}/dist/assets/js/`,
         // 出力ファイル名
-        filename: 'main.js'
+        filename: '[name].js'
     },
 
     // デバッグ・リリースモード設定(development/production)
@@ -50,7 +50,7 @@ module.exports = {
 
 // htmlファイルのパスを取得
 const path = require('path');
-const filename = '/index.html';
+const filename = '/../../index.html';
 const srcpath = path.dirname(module.exports.entry) + filename;
 const distpath = module.exports.output.path + filename;
 
