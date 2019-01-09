@@ -12,7 +12,3 @@ jQueryMethod('htmlSample');
 // Babelモジュールのテスト
 import {babelMethod} from './babel-module'
 babelMethod();
-
-// TypeScriptモジュールのテスト
-import {typeScriptMethod} from './typescript-module'
-typeScriptMethod('Main module.');
