@@ -1,7 +1,3 @@
-// プラグイン読込
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// Webpack設定
 module.exports = {
     // エントリーポイント設定
     entry: './src/main.js',
@@ -61,14 +57,18 @@ module.exports = {
         extensions: [
             '.js', '.ts'
         ]
-    },
-
-    // プラグイン設定
-    plugins: [
-        // html自動生成プラグイン
-        new HtmlWebpackPlugin({
-            template: './src/template.html',
-            filename: 'index.html',
-        }),
-    ]
+    }
 };
+
+// htmlファイルのパスを取得
+const path = require('path');
+const filename = '/index.html';
+const srcpath = path.dirname(module.exports.entry) + filename;
+const distpath = module.exports.output.path + filename;
+
+// ファイルを出力先にコピー
+const fs = require('fs');
+if (!fs.existsSync(module.exports.output.path)) {
+    fs.mkdirSync(module.exports.output.path);
+}
+fs.copyFileSync(srcpath, distpath);
