@@ -63,5 +63,9 @@ module.exports = {
             // コピー元の基準パス
             context: './src',
         }),
+        new CopyWebpackPlugin([{
+            from: './src/assets/images',
+            to: '../images',
+        }]),
     ],
 };
