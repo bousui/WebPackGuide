@@ -1,8 +1,9 @@
 // プラグイン読込
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // WebPack設定
-module.exports = {
+module.exports = [{
     // エントリーポイント設定
     entry: './src/assets/js/main.js',
 
@@ -68,4 +69,35 @@ module.exports = {
             to: '../images',
         }]),
     ],
-};
+}, {
+    entry: './src/assets/css/main.scss',
+
+    output: {
+        path: `${__dirname}/dist/assets/css/`,
+        filename: '[name].css'
+    },
+
+    mode: 'development',
+
+    module: {
+        rules: [{
+            // 拡張子が.scssの場合
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [{
+                    loader: 'css-loader',
+                }, {
+                    loader: 'sass-loader',
+                }],
+            }),
+        }]
+    },
+
+    plugins: [
+        // extract-text-webpack-plugin設定
+        new ExtractTextPlugin({
+            filename: (getPath) => getPath('[name].css')
+        }),
+    ],
+}];
